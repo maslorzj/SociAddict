@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   resources :contents
+  mount Ckeditor::Engine => "/ckeditor"
   devise_for :users, :skip => :registrations
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'contents#index'
+  root "contents#show", :id => '1'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
