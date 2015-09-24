@@ -1,3 +1,17 @@
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Content models</h1>
@@ -10,11 +24,13 @@
 
   <tbody>
 
+    <iframe src="/uploads" class="upload_iframe" id="uploads_iframe"></iframe>
+
     <% @contents.each do |content| %>
       <tr>
         <!-- script to append each model option depending on number of content in contents -->
         <!-- edit content iframe -->
-        <iframe src="/contents/<%= content.id %>/edit" class="edit_content_iframe" id="edit_content<%= content.id %>_iframe">error!</iframe>
+        <iframe src="/contents/<%= content.id %>/edit" class="edit_content_iframe" id="edit_content<%= content.id %>_iframe"></iframe>
         
         <script type="text/javascript">
           $('#choose_model').append("<option value='<%= content.id %>'>Model " +  <%= content.id %> + "</option>");

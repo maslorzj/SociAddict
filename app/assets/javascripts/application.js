@@ -23,4 +23,5 @@ $( document ).ready(function() {
       $(".edit_content_iframe").hide();
       $("#edit_content" + id + "_iframe").show();
     });
+    $(".edit_content_iframe .navbar-text").hide();
 });

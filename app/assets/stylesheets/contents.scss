@@ -17,3 +17,18 @@
 	float: left;
 	clear: left;
 }
+
+#cke_1_contents{
+	height: 350px !important;
+}
+
+#uploads_iframe{
+	float: right;
+	width: 30%;
+	height: 600px;
+	margin-top: 40px;
+}
+
+.edit_content_iframe .navbar-text{
+	display: none;
+}
