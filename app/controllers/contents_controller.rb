@@ -19,6 +19,7 @@ class ContentsController < ApplicationController
 
   # GET /contents/1/edit
   def edit
+    @contents = Content.all
   end
 
   # POST /contents
@@ -42,8 +43,8 @@ class ContentsController < ApplicationController
   def update
     respond_to do |format|
       if @content.update(content_params)
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
-        format.json { render :show, status: :ok, location: @content }
+        format.html { redirect_to edit_content_path(@content), notice: 'Content was successfully updated.' }
+        format.json { render :edit, status: :ok, location: @content }
       else
         format.html { render :edit }
         format.json { render json: @content.errors, status: :unprocessable_entity }

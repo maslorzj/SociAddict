@@ -1,3 +1,19 @@
 // Place all the styles related to the contents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.edit_content_iframe{
+	width: 60%;
+	height: 600px;
+	float: left;
+	clear: left;
+}
+
+#choose_model{
+	float: left;
+}
+
+#new_content_link{
+	float: left;
+	clear: left;
+}

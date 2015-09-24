@@ -16,3 +16,11 @@
 //= require_tree .
 //= require ckeditor/init
 //= require dropzone
+
+$( document ).ready(function() {
+    $("#choose_model").on('change', function() {
+      id = $("#choose_model").val()
+      $(".edit_content_iframe").hide();
+      $("#edit_content" + id + "_iframe").show();
+    });
+});
