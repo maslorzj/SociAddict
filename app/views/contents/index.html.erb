@@ -33,10 +33,18 @@
         <iframe src="/contents/<%= content.id %>/edit" class="edit_content_iframe" id="edit_content<%= content.id %>_iframe"></iframe>
         
         <script type="text/javascript">
-          $('#choose_model').append("<option value='<%= content.id %>'>Model " +  <%= content.id %> + "</option>");
-          if(<%= content.id %> != 1){
-            $("#edit_content<%= content.id %>_iframe").hide();
-          }
+          $( document ).ready(function() {
+            $('#choose_model').append("<option value='<%= content.id %>'>Model " +  <%= content.id %> + "</option>");
+            if(<%= content.id %> != 1){
+              $("#edit_content<%= content.id %>_iframe").hide();
+            }
+            $("#choose_model").on('change', function() {
+              id = $("#choose_model").val()
+              $(".edit_content_iframe").hide();
+              $("#edit_content" + id + "_iframe").show();
+            });
+            $(".edit_content_iframe .navbar-text").hide();
+          });
         </script>
 
       </tr>

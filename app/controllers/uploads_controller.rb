@@ -1,5 +1,5 @@
 class UploadsController < ApplicationController
-  include Cloudinary::CarrierWave  
+  #include Cloudinary::CarrierWave  
   def index
     @upload = Upload.new
   end

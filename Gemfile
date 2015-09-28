@@ -53,6 +53,9 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'cloudinary'
 
+# gem for seeding
+gem 'seed_dump'
+
 #gems required by Heroku
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
